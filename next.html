@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        data = sns.load_dataset('tips')
+
+        plt.scatter(data['day'], data['tip'], c=data['size'], 
+                    s=data['total_bill'])
+
+
+        plt.title("Scatter Plot")
+        plt.xlabel('Day')
+        plt.ylabel('Tip')
+        plt.colorbar()
+        plt.show()
+
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        data = sns.load_dataset('tips')
+        plt.plot(data['tip'])
+        plt.plot(data['size'])
+        plt.title("Line Plot")
+        plt.xlabel('Day')
+        plt.ylabel('Tip')
+        plt.show()
+
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        data = sns.load_dataset('tips')
+
+        plt.bar(data['day'], data['tip'])
+        plt.title("Bar Chart")
+        plt.xlabel('Day')
+        plt.ylabel('Tip')
+        plt.show()
+
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        data = sns.load_dataset('tips')
+        plt.hist(data['total_bill'])
+        plt.title("Histogram")
+        plt.show()
+
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        data = sns.load_dataset('tips')
+
+        sns.scatterplot(x='day', y='tip', data=data,)
+        plt.show()
+</pre>
+</body>
+</html>

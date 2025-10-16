@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Word
+        import sys
+        for line in sys.stdin:
+            for word in line.strip().split():
+                print(f"{word}\t1")
+
+        
+        import sys
+
+        current_word, total = None, 0
+
+        for line in sys.stdin:
+            word, count = line.strip().split('\t')
+            count = int(count)
+            if current_word == word:
+                total += count
+            else:
+                if current_word:
+                    print(f"{current_word}\t{total}")
+                current_word, total = word, count
+
+        if current_word:
+            print(f"{current_word}\t{total}")
+        
+        Temp
+        import sys
+        for line in sys.stdin:
+            year, temp = line.strip().split()
+            print(f"{year}\t{temp}")
+
+
+        import sys
+
+        current_year, max_temp = None, float('-inf')
+
+        for line in sys.stdin:
+            year, temp = line.strip().split('\t')
+            temp = float(temp)
+            if current_year == year:
+                max_temp = max(max_temp, temp)
+            else:
+                if current_year:
+                    print(f"{current_year}\t{max_temp}")
+                current_year, max_temp = year, temp
+
+        if current_year:
+            print(f"{current_year}\t{max_temp}")
+        
+        2020 35
+        2020 37
+        2021 33
+        2021 42
+        2022 40
+
+        Grades 
+       
+        import sys
+        for line in sys.stdin:
+            name, score = line.strip().split()
+            print(f"{name}\t{score}")
+
+
+        import sys
+
+        def grade(score):
+            s = float(score)
+            if s >= 90: return 'A'
+            elif s >= 80: return 'B'
+            elif s >= 70: return 'C'
+            elif s >= 60: return 'D'
+            else: return 'F'
+
+        for line in sys.stdin:
+            name, score = line.strip().split('\t')
+            print(f"{name}\t{grade(score)}")
+
+        Alice 85
+        Bob 92
+        Charlie 67
+        David 74
+        Eve 59
+
+        Char
+
+        import sys
+        for line in sys.stdin:
+            for ch in line.strip():
+                if ch.isalpha():      
+                    print(f"{ch.lower()}\t1")
+
+
+        import sys
+
+        current, total = None, 0
+        for line in sys.stdin:
+            ch, count = line.strip().split('\t')
+            count = int(count)
+            if current == ch:
+                total += count
+            else:
+                if current:
+                    print(f"{current}\t{total}")
+                current, total = ch, count
+        if current:
+            print(f"{current}\t{total}")
+
+
+
+
+
+    </pre>
+</body>
+</html>
